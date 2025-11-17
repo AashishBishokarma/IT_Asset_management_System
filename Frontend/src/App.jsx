@@ -38,6 +38,7 @@ const App = () => {
         {/* Add more pages here */}
       </Route>
     </Routes>
+    
   );
 };
 
