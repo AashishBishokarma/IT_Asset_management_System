@@ -1,35 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Login from "./pages/Login";
+import Layout from "./components/layout/Layout";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+// pages
+import DashboardPage from "./pages/DashboardPage";
+import AssetsListPage from "./pages/Assets/AssetsListPage";
+import AddAssetPage from "./pages/Assets/AddAssetPage";
+import EditAssetPage from "./pages/Assets/EditAssetPage";
+import AssignmentsPage from "./pages/AssignmentsPage";
+import EmployeesPage from "./pages/EmployeesPage";
+import EmployeeAssetsPage from "./pages/EmployeeAssetsPage";
+import AddEmployeePage from "./pages/AddEmployeePage"; // Import AddEmployeePage
+import IssueReportPage from "./pages/IssueReportPage";
+import MaintenancePage from "./pages/MaintenancePage";
+import DepreciationPage from "./pages/DepreciationPage";
+import RequestsPage from "./pages/RequestsPage";
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <Routes>
+      <Route path="/" element={<Login />} />
 
-export default App
+      {/* All protected/dashboard UI */}
+      <Route element={<Layout />}>
+        <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/assets" element={<AssetsListPage />} />
+        <Route path="/assets/add" element={<AddAssetPage />} />
+        <Route path="/assets/edit/:id" element={<EditAssetPage />} />
+        <Route path="/assignments" element={<AssignmentsPage />} />
+        <Route path="/employees" element={<EmployeesPage />} />
+        <Route path="/employees/add" element={<AddEmployeePage />} /> {/* Add route for AddEmployeePage */}
+        <Route path="/employees/:id" element={<EmployeeAssetsPage />} />
+        <Route path="/employees/:id/report" element={<IssueReportPage />} />
+        <Route path="/maintenance" element={<MaintenancePage />} />
+        <Route path="/depreciation" element={<DepreciationPage />} />
+        <Route path="/requests" element={<RequestsPage />} />
+        {/* Add more pages here */}
+      </Route>
+    </Routes>
+  );
+};
+
+export default App;
