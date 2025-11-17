@@ -16,11 +16,7 @@ dotenv.config();
 
 const app = express();
 app.use(
-  cors({
-    origin: "https://it-asset-management-system-frontend.onrender.com",
-    methods: "GET,POST,PUT,DELETE",
-    credentials: true
-  })
+  cors(*)
 );
 
 app.use(express.json());
