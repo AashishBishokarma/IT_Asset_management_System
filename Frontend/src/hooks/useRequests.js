@@ -15,7 +15,7 @@ const useRequests = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('All');
 
-  const API_BASE_URL = 'http://localhost:5000/api/issues';
+  const API_BASE_URL = 'https://it-asset-management-system-backend.onrender.com/api/issues';
 
   useEffect(() => {
     const fetchRequests = async () => {
