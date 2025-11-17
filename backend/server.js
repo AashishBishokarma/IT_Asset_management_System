@@ -15,7 +15,14 @@ import dashboardRoutes from "./routes/dashboardRoutes.js"; // Import dashboard r
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://it-asset-management-system-frontend.onrender.com",
+    methods: "GET,POST,PUT,DELETE",
+    credentials: true
+  })
+);
+
 app.use(express.json());
 
 connectDB();
