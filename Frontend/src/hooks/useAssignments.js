@@ -15,7 +15,7 @@ const useAssignments = () => {
   const [assignmentsLoading, setAssignmentsLoading] = useState(true);
   const [assignmentsError, setAssignmentsError] = useState(null);
 
-  const API_URL = "http://localhost:5000/api/assignments";
+  const API_URL = "https://it-asset-management-system-backend.onrender.com/api/assignments";
 
   useEffect(() => {
     const fetchAssignments = async () => {
