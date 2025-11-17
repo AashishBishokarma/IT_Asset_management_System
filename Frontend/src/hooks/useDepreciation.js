@@ -13,7 +13,7 @@ const useDepreciation = () => {
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
 
-  const API_BASE_URL = 'http://localhost:5000/api/depreciation';
+  const API_BASE_URL = 'https://it-asset-management-system-backend.onrender.com/api/depreciation';
 
   useEffect(() => {
     const fetchData = async () => {
