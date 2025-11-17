@@ -50,7 +50,7 @@ const initialAssets = [
 
 // Toggle this to switch between frontend-only and backend mode
 const USE_BACKEND = true; // Set to true when backend is ready
-const API_URL = "http://localhost:5000/api/assets"; // Your backend URL
+const API_URL = "https://it-asset-management-system-backend.onrender.com/api/assets"; // Your backend URL
 
 const useAssetsData = () => {
   const [assets, setAssets] = useState([]);
